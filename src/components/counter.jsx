@@ -8,14 +8,14 @@ class Counter extends Component {
         
         return (
         <div>
-            <span>{this.formatCount()}</span>
+            <span className="badge badge-primary" >{this.formatCount()}</span>
             <button>Increment</button>
         </div>);
     }
 
     formatCount() {
         const {count} = this.state // Object destructuring : picking the 'count' property of the state object & storing it into a constant and setting it to the current state object (-> this.state)
-        return count === 0 ? <p>Zero</p> : count;
+        return count === 0 ? 'Zero' : count;
     }
 
 }
