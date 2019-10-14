@@ -11,7 +11,9 @@ class Counter extends Component {
     } // object addedd to the style attribute
 
     render() { 
-        
+       let classes = "badge m-2"; // in all cases we want to have a badge with a margin of 2 
+       classes += (this.state.count === 0 ? "badge-primary" : "badge-warning") // to wich we add the color blue 
+
         return (
         <div>
             <span style={this.styles} className="badge badge-primary m-2" >{this.formatCount()}</span>
