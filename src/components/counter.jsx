@@ -15,7 +15,7 @@ class Counter extends Component {
 
     formatCount() {
         const {count} = this.state // Object destructuring : picking the 'count' property of the state object & storing it into a constant and setting it to the current state object (-> this.state)
-        return count === 0 ? 'Zero' : count;
+        return count === 0 ? <p>Zero</p> : count;
     }
 
 }
