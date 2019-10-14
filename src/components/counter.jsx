@@ -2,23 +2,37 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0
+        count: 0,
+    };
+
+    // constructor(){
+    //     super()
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
+    handleIncrement = product => {
+        this.setState({ count: this.state.count + 1 })
     }
 
-    styles = {
-        fontSize : 10,
-        fontWeigth: 'bold'
-    } // object addedd to the style attribute
+    
 
     render() { 
-       let classes = "badge m-2"; // in all cases we want to have a badge with a margin of 2 
-       classes += (this.state.count === 0 ? "badge-primary" : "badge-warning") // to wich we add the color blue 
-
+    
         return (
-        <div>
-            <span style={this.styles} className="badge badge-primary m-2" >{this.formatCount()}</span>
-            <button className="btn btn-secondary btn-sm" >Increment</button>
-        </div>);
+            <div>
+                <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+                <button onClick={(product) => this.handleIncrement(product)} 
+                    className="btn btn-secondary btn-sm">
+                    Increment
+                    </button>
+            </div>);
+    }
+
+    getBadgeClasses() {
+        let classes = "badge m-2 badge"; // in all cases we want to have a badge with a margin of 2 
+        classes += (this.state.count === 0) ? "-warning" : "-primary"; // to which we add the color blue or yellow depending on the state of the count property 
+        // let classes = (this.state.count === 0) ? "badge badge-warning m-2" : "badge badge-primary m-2";
+        return classes;
     }
 
     formatCount() {
