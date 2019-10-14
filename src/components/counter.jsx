@@ -4,12 +4,18 @@ class Counter extends Component {
     state = {
         count: 0
     }
+
+    styles = {
+        fontSize : 10,
+        fontWeigth: 'bold'
+    } // object addedd to the style attribute
+
     render() { 
         
         return (
         <div>
-            <span className="badge badge-primary" >{this.formatCount()}</span>
-            <button>Increment</button>
+            <span style={this.styles} className="badge badge-primary m-2" >{this.formatCount()}</span>
+            <button className="btn btn-secondary btn-sm" >Increment</button>
         </div>);
     }
 
