@@ -6,9 +6,9 @@ import './App.css';
 
 
 class App extends Component {
- /*1st the state & methods were inside the counters component (which was parent to the counter component) 
+ /*1st the state & methods were inside the counters component (which was parent to the Counter component) 
   then we moved all this to the App component in order to have both the Counters & the NavBar component 
-  be in sync by having the same parent and receiving data from it via props */
+  be in sync by having the same parent & receiving data from it via props */
   state = { 
     counters: [
         { id: 1, value: 0},
@@ -35,7 +35,7 @@ handleDecrement = counter2 => {
    this.setState({ counters });
 };
 
- // map method to get each counter and reset its value -> we get the existing counters w. the map method to get each counter & reset its value to 0
+ // map method to get each counter & reset its value -> we get the existing counters w. the map method to get each counter & reset its value to 0
  handleReset = () => {
    const counters =  this.state.counters.map(c => {
         c.value = 0;
